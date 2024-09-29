@@ -1,3 +1,6 @@
+const { GoatWrapper } = require('fca-liane-utils');
+const axios = require('axios');
+
 module.exports = {
   config: {
     name: "uptime",
@@ -29,10 +32,12 @@ module.exports = {
       
       const uptimeString = `${days} days ${hours}Hrs ${minutes}min ${seconds}sec`;
       
-      api.sendMessage(`⏰ | Bot running time\n☞ ${uptimeString}\n\n👪 | Total Users\n☞ ${allUsers.length}\n🌸 | Total threads\n☞ ${allThreads.length}`, event.threadID);
+      api.sendMessage(`[𓃵]•𝗭𝗘𝗣𝗛𝗬𝗥𝗨𝗦 𝗨𝗣𝗧𝗜𝗠𝗘:\n╭┈ ❒ ⏰ | 𝗕𝗼𝘁 𝗿𝘂𝗻𝗻𝗶𝗻𝗴 𝘁𝗶𝗺𝗲\n\n╰┈❃➣  ${uptimeString}\n\n╭┈ ❒  👥 | Total Users\n╰┈❃➣  ${allUsers.length}\n\n╭┈ ❒ 🔰 | Total threads\n╰┈❃➣  ${allThreads.length}`, event.threadID);
     } catch (error) {
       console.error(error);
       api.sendMessage("An error occurred while retrieving data.", event.threadID);
     }
   }
 };
+const wrapper = new GoatWrapper(module.exports);
+wrapper.applyNoPrefix({ allowPrefix: true }); 
