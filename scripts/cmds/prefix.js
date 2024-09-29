@@ -48,7 +48,7 @@ module.exports = {
       confirmThisThread: "Please react to this message to confirm the prefix change for your chat box",
       successGlobal: "The prefix of the bot system has been changed to: %1",
       successThisThread: "The prefix of your chat box has been changed to: %1",
-      myPrefix: "🌐 Bot System Prefix: %1\n🛸 Your Chat Box Prefix: %2\nPrefix executed time (Asia/Manila): %3",
+      myPrefix: "╭┈ ❒ 🤖 𝗞𝗬𝗟𝗘'𝗦 𝗕𝗢𝗧 ᵐᵃᵈᵉ ᵇʸ ᴳᵒᵃᵗ:\n━━━━━━━━━━━━━━━━━━━\n╰┈➤ 𝖡𝗈𝗍 𝖲𝗒𝗌𝗍𝖾𝗆 𝖯𝗋𝖾𝖿𝗂𝗑: %1\n╰┈❃➣ [💬] 𝖸𝗈𝗎𝗋 𝖢𝗁𝖺𝗍 𝖡𝗈𝗑 𝖯𝗋𝖾𝖿𝗂𝗑: [ %2 ]\n╰┈❃➣ 🇵🇭PHILIPPINES Timezone:\n%3\n━━━━━━━━━━━━━━━━━━━\n[❓] — 𝗵𝗼𝘄 𝘁𝗼 𝘂𝘀𝗲𝗱?  \n╰┈❃➣ ℹ️𝗧𝘆𝗽𝗲: help or %2help to view all bot commands\n〡\n╰┈❃➣ 『owner』: 𝗞𝘆𝗹𝗲𝗽𝗼𝗴𝗶",
       philippinesTimezone: "🇵🇭 Philippines Timezone: GMT+8"
     }
   },
