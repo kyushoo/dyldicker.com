@@ -33,7 +33,7 @@ module.exports = {
 
   langs: {
     en: {
-      final: "▄︻デ𝗞𝘆𝗹𝗲敦. ဗီူ══━一",
+      final: "Kyle's Bot",
       loading: "˚₊·͟͟͟͟͟͟͞͞͞͞͞͞➳  ⌨ ✰ 𝗭𝗘𝗣𝗛 𝗕𝗢𝗧 ⁱˢ ᵗʸᵖⁱⁿᵍ···  | ೃ࿔₊•: \n❍━━━━━━━━━━━━━━━━━━━━❏\n🕗 𝗭𝗘𝗣𝗛𝗬𝗥𝗨𝗦 𝗜𝗦 𝗦𝗘𝗔𝗥𝗖𝗛𝗜𝗡𝗚 𝗬𝗢𝗨𝗥 𝗤𝗨𝗘𝗦𝗧𝗜𝗢𝗡 𝗣𝗟𝗘𝗔𝗦𝗘 𝗪𝗔𝗜𝗧..........\n❍━━━━━━━━━━━━━━━━━━━━❏"
     }
   },
@@ -66,7 +66,7 @@ module.exports = {
 
       const messageText = response.data.reply.trim();
       const userName = getLang("final");
-      const finalMsg = `${userName}\n🗣 Asked by: ${event.senderID}\n❍━━━━━━━━━━━━━━━━━━━━❏\n💁🏻‍♂️ ANSWER: ${messageText}\n❍━━━━━━━━━━━━━━━━━━━━❏\n⏰ DATE AND TIME: ${formattedDateTime}`;
+      const finalMsg = `${userName}\n━━━━━━━━━━━━━━━━━━━\n🗣 Asked by: ${event.senderName}-(${event.senderID})\n❍━━━━━━━━━━━━━━━━━━━━❏\n💁🏻‍♂ ANSWER: ${messageText}\n❍━━━━━━━━━━━━━━━━━━━━❏`;
 
       await api.editMessage(finalMsg, loadingReply.messageID);
 
@@ -80,6 +80,3 @@ module.exports = {
     }
   },
 };
-
-const wrapper = new GoatWrapper(module.exports);
-wrapper.applyNoPrefix({ allowPrefix: true });
