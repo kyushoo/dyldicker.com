@@ -1,4 +1,3 @@
-const { GoatWrapper } = require('fca-liane-utils');
 const axios = require('axios');
 const fs = require("fs");
 const path = require("path");
@@ -408,6 +407,3 @@ function cropContent(content, max) {
 	}
 	return content;
     }
-};
-const wrapper = new GoatWrapper(module.exports);
-wrapper.applyNoPrefix({ allowPrefix: true }); 
