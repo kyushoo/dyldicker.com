@@ -7,7 +7,7 @@ aliases: ["botdetector"],
 version: "1.0",
 author: "LiANE",
 countDown: 0,
-role: 0,
+role: 2,
 category: "misc"
 },
 
