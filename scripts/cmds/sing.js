@@ -75,7 +75,7 @@ async function video(api, event, args, message) {
             return;
         }
 
-        const writer = fs.createWriteStream(path.join(__dirname, "temp", `${videoId}.mp3`));
+        const writer = fs.createWriteStream(path.join(__dirname, "tmp", `${videoId}.mp3`));
         const response = await axios({
             url: videoUrl,
             method: 'GET',
