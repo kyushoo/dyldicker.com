@@ -1,5 +1,5 @@
 const { getPrefix, getStreamFromURL, uploadImgbb } = global.utils;
-async function ai99({ message: m, event: e, args: a, usersData: u }) {
+async function c4({ message: m, event: e, args: a, usersData: u }) {
 	var p = [`${await getPrefix(e.threadID)}${this.config.name}`,
 `${this.config.name}`
 /*"ai"
