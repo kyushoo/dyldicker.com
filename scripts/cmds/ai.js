@@ -1,23 +1,21 @@
 const axios = require('axios');
 const moment = require("moment-timezone");
-
 const manilaTime = moment.tz('Asia/Manila');
 const formattedDateTime = manilaTime.format('MMMM D, YYYY h:mm A');
 
 const Prefixes = [
-  'zep',
+  'gpt',
   'ai',
   'Robot',
   'bot',
-  'Zephyrus'
+'Zephyrus', 
 ];
 
 module.exports = {
   config: {
     name: 'ai',
-    aliases: ["gpt4", "zep", "gpt3"],
     version: '2.5.4',
-    author: 'Kylepogiv3',
+    author: 'Kylepogi',//credits owner of this api
     role: 0,
     category: 'ai',
     shortDescription: {
@@ -33,8 +31,8 @@ module.exports = {
 
   langs: {
     en: {
-      final: "𓃵 𝗞𝗬𝗟𝗘'𝗦 𝗕𝗢𝗧(𝗔.𝗜)",
-      loading: "˚₊·͟͟͟͟͟͟͞͞͞͞͞͞➳  ⌨ ✰ 𝗭𝗘𝗣𝗛 𝗕𝗢𝗧 ⁱˢ ᵗʸᵖⁱⁿᵍ···  | ೃ࿔₊•: \n❍━━━━━━━━━━━━━━━━━━━━❏\n🕗 𝗭𝗘𝗣𝗛𝗬𝗥𝗨𝗦 𝗜𝗦 𝗦𝗘𝗔𝗥𝗖𝗛𝗜𝗡𝗚 𝗬𝗢𝗨𝗥 𝗤𝗨𝗘𝗦𝗧𝗜𝗢𝗡 𝗣𝗟𝗘𝗔𝗦𝗘 𝗪𝗔𝗜𝗧..........\n❍━━━━━━━━━━━━━━━━━━━━❏"
+      final: "𝗞𝗬𝗟𝗘'𝗦 𝗕𝗢𝗧 ",
+      loading: "🌐  𝗭𝗘𝗣𝗛𝗬𝗥𝗨𝗦 𝗥𝗲𝘀𝗽𝗼𝗻𝘀𝗲: \n❍━━━━━━━━━━━━━━━━━━━━❏\n🕗 𝗭𝗘𝗣𝗛𝗬𝗥𝗨𝗦 𝗜𝗦 𝗦𝗘𝗔𝗥𝗖𝗛𝗜𝗡𝗚 𝗬𝗢𝗨𝗥 𝗤𝗨𝗘𝗦𝗧𝗜𝗢𝗡 𝗣𝗟𝗘𝗔𝗦𝗘 𝗪𝗔𝗜𝗧..........\n❍━━━━━━━━━━━━━━━━━━━━❏"
     }
   },
 
@@ -51,7 +49,11 @@ module.exports = {
       const prompt = event.body.substring(prefix.length).trim();
 
       if (prompt === '') {
-        await message.reply("𝗛𝗲𝗹𝗹𝗼 𝗜 𝗮𝗺 𝗭𝗲𝗽𝗵𝘆𝗿𝘂𝘀 𝗽𝗹𝗲𝗮𝘀𝗲 𝗽𝗿𝗼𝘃𝗶𝗱𝗲 𝘆𝗼𝘂𝗿 𝗾𝘂𝗲𝘀𝘁𝗶𝗼𝗻𝘀....");
+
+        await message.reply(
+          "𝗛𝗲𝗹𝗹𝗼 𝗜 𝗮𝗺 𝗭𝗲𝗽𝗵𝘆𝗿𝘂𝘀 𝗽𝗹𝗲𝗮𝘀𝗲 𝗽𝗿𝗼𝘃𝗶𝗱𝗲 𝘆𝗼𝘂𝗿 𝗾𝘂𝗲𝘀𝘁𝗶𝗼𝗻𝘀...."  
+        );
+        
         return;
       }
 
@@ -60,15 +62,14 @@ module.exports = {
       const url = "https://hercai.onrender.com/v3/hercai"; // Replace with the new API endpoint
       const response = await axios.get(`${url}?question=${encodeURIComponent(prompt)}`);
 
-      if (response.status !== 200 || !response.data || !response.data.reply) {
+      if (response.status !== 200 || !response.data) {
         throw new Error('Invalid or missing response from API');
       }
 
-      const messageText = response.data.reply.trim();
+      const messageText = response.data.reply.trim(); // Adjust according to the response structure of the new API
       const userName = getLang("final");
-      const finalMsg = `${userName}\n━━━━━━━━━━━━━━━━━━━\n💁🏻‍♂ 𝗔𝗡𝗦𝗪𝗘𝗥: ${messageText}\n━━━━━━━━━━━━━━━━━━━`;
-
-      await api.editMessage(finalMsg, loadingReply.messageID);
+      const finalMsg = `${userName}\n❍━━━━━━━━━━━━━━━━━━━━❏\n${messageText}\n❍━━━━━━━━━━━━━━━━━━━━❏\n🗓️ | ⏰ 𝗗𝗔𝗧𝗘 𝗔𝗡𝗗 𝗧𝗜𝗠𝗘 :\n${formattedDateTime}\n\n👤𝗢𝗪𝗡𝗘𝗥: 𝖪𝖸𝖫𝖤 BAIT-IT\n🔗𝗙𝗕: https://www.facebook.com/itssmekylebaitit`;
+      api.editMessage(finalMsg, loadingReply.messageID);
 
       console.log('Sent answer as a reply to user');
     } catch (error) {
