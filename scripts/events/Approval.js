@@ -25,7 +25,7 @@ module.exports = {
 
     if (!threads.includes(groupId) && event.logMessageType === "log:subscribe") {
       await message.send({
-        body: `⚠️/🚨 You Added The 𝙆𝙔𝙇𝙀'𝙎 𝘽𝙊𝙏 Without Permission !!\n\n✧Take Permission To Use 𝙆𝙔𝙇𝙀'𝙎 𝘽𝙊𝙏 In Your Group !!\n✧Join 𝙆𝙔𝙇𝙀'𝙎 𝘽𝙊𝙏 Support Zone to Contact With Admin's For approval !!\n\n✧Type ${p}supportgc within 20 seconds.\n✧Type -request within 60 seconds for get Your Box Approval and Permissions to use 𝙆𝙔𝙇𝙀'𝙎 𝘽𝙊𝙏 in Your Group!,
+        body: `⚠️|🚨 You Added The 𝙆𝙔𝙇𝙀'𝙎 𝘽𝙊𝙏 Without Permission !!\n\n✧Take Permission To Use 𝙆𝙔𝙇𝙀'𝙎 𝘽𝙊𝙏 In Your Group !!\n✧Join 𝙆𝙔𝙇𝙀'𝙎 𝘽𝙊𝙏 Support Zone to Contact With Admin's For approval !!\n\n✧Type ${p}supportgc within 20 seconds.\n✧Type -request within 60 seconds for get Your Box Approval and Permissions to use 𝙆𝙔𝙇𝙀'𝙎 𝘽𝙊𝙏 in Your Group!,
         attachment: await getStreamFromURL("https://i.imgur.com/YIMFTHy.jpeg")
       });
     }
